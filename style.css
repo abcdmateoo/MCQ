@@ -414,3 +414,75 @@ img {
     gap: 5px;
   }
 }
+/* Tu CSS que ya tienes */
+...
+
+}
+
+/* NUEVAS CORRECCIONES */
+.encabezado h1 {
+  color: #3B7E82;
+}
+
+.descripcion-portafolio {
+  max-width: 850px;
+  margin: 25px auto 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #20201E;
+}
+
+/* Carrusel */
+.carrusel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.carrusel-contenedor {
+  width: 85%;
+  overflow: hidden;
+}
+
+.grupo-fotos {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.grupo-fotos img {
+  width: calc(33.333% - 14px);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.grupo-2 {
+  display: none;
+}
+
+.flecha {
+  background: none;
+  border: none;
+  color: #3B7E82;
+  font-size: 42px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  padding: 10px;
+  line-height: 1;
+}
+
+.flecha:hover {
+  opacity: 0.6;
+}
+
+.flecha-izquierda {
+  margin-left: 10px;
+}
+
+.flecha-derecha {
+  margin-right: 10px;
+}
