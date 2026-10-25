@@ -1,451 +1,85 @@
-
-/* ========================================
-   TIPOGRAFÍA ARESINK
-======================================== */
-
 @font-face {
   font-family: "Aresink";
-  src: url("./demo.otf") format("opentype");
+  src: url("demo.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 
-/* ========================================
-   COLORES Y CONFIGURACIÓN GENERAL
-======================================== */
-
-:root {
-  --fondo: #E5E2DA;
-  --azul: #6899A3;
-  --texto: #20201E;
-  --margen: 6%;
-}
 
 * {
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
   margin: 0;
-  background: var(--fondo);
-  color: var(--texto);
+  padding: 0;
+  background-color: #E5E2DA;
+  color: #20201E;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+
+/* =========================
+   ENCABEZADO
+   ========================= */
+
+.encabezado {
+  text-align: center;
+  padding: 70px 8% 30px;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
 
-/* ========================================
-   TÍTULOS CON ARESINK
-======================================== */
-
-.titulo-portafolio,
-.nombre,
-.indice a,
-.titulo-seccion,
-.proyecto span,
-.wiki-casiopea h2 {
+.encabezado h1 {
+  margin: 0;
   font-family: "Aresink", serif;
+  font-size: clamp(45px, 7vw, 90px);
+  font-weight: normal;
+  color: #3B7E82;
+  letter-spacing: -2px;
+}
+
+
+.encabezado h3 {
+  margin: 15px 0 0;
+  font-family: "Aresink", serif;
+  font-size: 25px;
   font-weight: normal;
 }
 
-.titulo-portafolio {
-  font-size: clamp(2.5rem, 7vw, 6rem);
-  line-height: 1.05;
-  margin: 0;
-  letter-spacing: -0.03em;
-}
-
-.nombre {
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
-  margin: 12px 0 0;
-  color: var(--azul);
-}
-
-.titulo-seccion,
-.wiki-casiopea h2 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  line-height: 1.1;
-  margin: 0;
-}
-
-/* ========================================
-   CONTENIDO PRINCIPAL
-======================================== */
-
-.contenido {
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 50px var(--margen) 0;
-  position: relative;
-  z-index: 1;
-}
-
-/* ========================================
-   ESTRELLAS DECORATIVAS
-======================================== */
-
-.estrellas {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.estrella {
-  position: absolute;
-  color: var(--azul);
-  line-height: 1;
-}
-
-.e1  { top: 3%; left: 8%; font-size: 19px; }
-.e2  { top: 8%; left: 88%; font-size: 26px; }
-.e3  { top: 19%; left: 95%; font-size: 16px; }
-.e4  { top: 31%; left: 3%; font-size: 25px; }
-.e5  { top: 42%; left: 92%; font-size: 17px; }
-.e6  { top: 53%; left: 7%; font-size: 20px; }
-.e7  { top: 64%; left: 96%; font-size: 24px; }
-.e8  { top: 73%; left: 2%; font-size: 16px; }
-.e9  { top: 82%; left: 90%; font-size: 20px; }
-.e10 { top: 89%; left: 6%; font-size: 24px; }
-.e11 { top: 95%; left: 82%; font-size: 16px; }
-.e12 { top: 14%; left: 50%; font-size: 13px; }
-
-/* ========================================
-   ENCABEZADO
-======================================== */
-
-.encabezado {
-  padding: 20px 0 45px;
-  border-bottom: 1px solid var(--texto);
-}
-
-/* ========================================
-   CARRUSEL DE IMÁGENES
-======================================== */
-
-.carrusel {
-  padding: 35px 0 25px;
-}
-
-.carrusel-pagina {
-  display: none;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.carrusel-pagina.activa {
-  display: grid;
-}
-
-.carrusel-pagina img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: #D4D0C7;
-}
-
-.controles-carrusel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  padding-top: 20px;
-  font-size: 12px;
-}
-
-.controles-carrusel button {
-  border: 1px solid var(--texto);
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  background: transparent;
-  color: var(--texto);
-  font-size: 19px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.controles-carrusel button:hover {
-  background: var(--azul);
-  color: var(--fondo);
-}
-
-/* ========================================
-   ÍNDICE HORIZONTAL
-======================================== */
-
-.indice {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 22px 0;
-  border-top: 1px solid var(--texto);
-  border-bottom: 1px solid var(--texto);
-}
-
-.indice a {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  transition: color 0.2s;
-}
-
-.indice a:hover {
-  color: var(--azul);
-}
-
-/* ========================================
-   PRESENTACIÓN
-======================================== */
-
-.presentacion {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 8%;
-  align-items: center;
-  padding: 100px 0;
-}
-
-.texto-presentacion {
-  max-width: 650px;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.8;
-}
-
-.texto-presentacion p {
-  margin: 0 0 22px;
-}
-
-.texto-presentacion p:last-child {
-  margin-bottom: 0;
-}
-
-.fotos-presentacion {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  align-items: start;
-}
-
-.fotos-presentacion img {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  background: #D4D0C7;
-}
-
-.fotos-presentacion img:nth-child(2) {
-  margin-top: 35px;
-}
-
-/* ========================================
-   PORTFOLIO DIGITAL
-======================================== */
-
-.portfolio {
-  padding: 55px 0 100px;
-  border-top: 1px solid var(--texto);
-}
-
-.subtitulo-seccion {
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  margin: 15px 0 40px;
-  color: var(--azul);
-}
-
-.proyectos {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 45px 20px;
-}
-
-.proyecto {
-  display: block;
-  min-width: 0;
-}
-
-.proyecto img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  background: #D4D0C7;
-  transition: opacity 0.25s, transform 0.25s;
-}
-
-.proyecto:hover img {
-  opacity: 0.8;
-  transform: translateY(-4px);
-}
-
-.proyecto span {
-  display: block;
-  padding-top: 12px;
-  font-size: clamp(1.1rem, 2vw, 1.6rem);
-}
-
-/* ========================================
-   WIKI CASIOPEA
-======================================== */
-
-.wiki-casiopea {
-  border-top: 1px solid var(--texto);
-  padding: 65px 0 75px;
-  max-width: 850px;
-}
-
-.wiki-casiopea p {
-  margin: 25px 0 12px;
-  max-width: 650px;
-}
-
-.wiki-casiopea > a {
-  display: inline-block;
-  color: var(--azul);
-  overflow-wrap: anywhere;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.wiki-casiopea > a:hover {
-  color: var(--texto);
-}
-
-/* ========================================
-   PIE DE PÁGINA
-======================================== */
-
-.pie-pagina {
-  border-top: 1px solid var(--texto);
-  padding: 20px 0 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  font-size: 12px;
-}
-
-/* ========================================
-   ADAPTACIÓN A PANTALLAS PEQUEÑAS
-======================================== */
-
-@media (max-width: 700px) {
-  :root {
-    --margen: 5%;
-  }
-
-  .contenido {
-    padding-top: 30px;
-  }
-
-  .encabezado {
-    padding-bottom: 30px;
-  }
-
-  .carrusel-pagina {
-    gap: 7px;
-  }
-
-  .carrusel-pagina img {
-    aspect-ratio: 3 / 4;
-  }
-
-  .indice {
-    gap: 10px;
-  }
-
-  .indice a {
-    font-size: 0.95rem;
-  }
-
-  .presentacion {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 65px 0;
-  }
-
-  .fotos-presentacion {
-    max-width: 430px;
-  }
-
-  .proyectos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 12px;
-  }
-
-  .proyecto span {
-    font-size: 1rem;
-  }
-
-  .wiki-casiopea {
-    padding: 50px 0;
-  }
-}
-
-@media (max-width: 400px) {
-  .indice a {
-    font-size: 0.8rem;
-  }
-
-  .proyectos {
-    grid-template-columns: 1fr;
-  }
-
-  .pie-pagina {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-}
-/* Tu CSS que ya tienes */
-...
-
-}
-
-/* NUEVAS CORRECCIONES */
-.encabezado h1 {
-  color: #3B7E82;
-}
 
 .descripcion-portafolio {
   max-width: 850px;
-  margin: 25px auto 0;
+  margin: 35px auto 0;
   font-size: 16px;
   line-height: 1.7;
-  color: #20201E;
+  text-align: left;
 }
 
-/* Carrusel */
+
+/* =========================
+   CARRUSEL
+   ========================= */
+
 .carrusel {
-  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px 0;
+  margin: 40px 0 70px;
 }
 
+
 .carrusel-contenedor {
-  width: 85%;
+  width: 86%;
   overflow: hidden;
 }
+
 
 .grupo-fotos {
   width: 100%;
@@ -454,35 +88,381 @@ img {
   justify-content: center;
 }
 
+
 .grupo-fotos img {
   width: calc(33.333% - 14px);
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  display: block;
 }
+
 
 .grupo-2 {
   display: none;
 }
 
+
 .flecha {
+  width: 7%;
   background: none;
   border: none;
   color: #3B7E82;
-  font-size: 42px;
-  font-family: Arial, sans-serif;
-  cursor: pointer;
-  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: normal;
   line-height: 1;
+  cursor: pointer;
+  padding: 0;
 }
+
 
 .flecha:hover {
-  opacity: 0.6;
+  opacity: 0.55;
 }
+
 
 .flecha-izquierda {
-  margin-left: 10px;
+  text-align: center;
 }
 
+
 .flecha-derecha {
-  margin-right: 10px;
+  text-align: center;
+}
+
+
+/* =========================
+   ÍNDICE
+   ========================= */
+
+.indice {
+  width: 84%;
+  margin: 0 auto 90px;
+  padding: 18px 0;
+  border-top: 1px solid #20201E;
+  border-bottom: 1px solid #20201E;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+
+.indice a,
+.indice span {
+  font-family: "Aresink", serif;
+  font-size: 18px;
+  color: #20201E;
+  text-decoration: none;
+}
+
+
+.indice a:hover {
+  color: #3B7E82;
+}
+
+
+.indice a:first-child {
+  text-align: left;
+}
+
+
+.indice span {
+  text-align: center;
+}
+
+
+.indice a:last-child {
+  text-align: right;
+}
+
+
+/* =========================
+   PRESENTACIÓN
+   ========================= */
+
+.presentacion {
+  width: 84%;
+  margin: 0 auto 120px;
+
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 70px;
+  align-items: start;
+}
+
+
+.texto-presentacion h2,
+.portfolio h2,
+.wiki h2 {
+  font-family: "Aresink", serif;
+  font-size: 42px;
+  font-weight: normal;
+  color: #20201E;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+
+.texto-presentacion p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+
+.imagenes-presentacion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+
+.imagenes-presentacion img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+
+/* =========================
+   PORTFOLIO DIGITAL
+   ========================= */
+
+.portfolio {
+  width: 84%;
+  margin: 0 auto 120px;
+}
+
+
+.proyectos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px 25px;
+}
+
+
+.proyecto {
+  text-decoration: none;
+  color: #20201E;
+  display: block;
+}
+
+
+.proyecto img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+
+.proyecto:hover img {
+  opacity: 0.7;
+}
+
+
+.proyecto p {
+  margin: 12px 0 0;
+  font-family: "Aresink", serif;
+  font-size: 18px;
+}
+
+
+/* =========================
+   WIKI
+   ========================= */
+
+.wiki {
+  width: 84%;
+  margin: 0 auto 120px;
+  padding-top: 50px;
+  border-top: 1px solid #20201E;
+}
+
+
+.wiki p {
+  max-width: 650px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+.wiki a {
+  color: #3B7E82;
+  font-family: "Aresink", serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+
+.wiki a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  width: 84%;
+  margin: 0 auto;
+  padding: 30px 0 45px;
+  border-top: 1px solid #20201E;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+footer p {
+  margin: 0;
+  font-family: "Aresink", serif;
+  font-size: 16px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px) {
+
+  .encabezado {
+    padding: 50px 6% 25px;
+  }
+
+
+  .encabezado h1 {
+    font-size: 50px;
+  }
+
+
+  .descripcion-portafolio {
+    font-size: 15px;
+  }
+
+
+  .carrusel-contenedor {
+    width: 82%;
+  }
+
+
+  .grupo-fotos {
+    gap: 10px;
+  }
+
+
+  .grupo-fotos img {
+    width: calc(33.333% - 7px);
+  }
+
+
+  .flecha {
+    width: 9%;
+    font-size: 35px;
+  }
+
+
+  .indice {
+    width: 88%;
+  }
+
+
+  .presentacion {
+    width: 88%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+
+  .portfolio {
+    width: 88%;
+  }
+
+
+  .proyectos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  .wiki {
+    width: 88%;
+  }
+
+
+  footer {
+    width: 88%;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .encabezado h1 {
+    font-size: 40px;
+  }
+
+
+  .encabezado h3 {
+    font-size: 21px;
+  }
+
+
+  .carrusel-contenedor {
+    width: 78%;
+  }
+
+
+  .grupo-fotos {
+    gap: 6px;
+  }
+
+
+  .grupo-fotos img {
+    width: calc(33.333% - 4px);
+  }
+
+
+  .flecha {
+    font-size: 28px;
+  }
+
+
+  .indice {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    text-align: center;
+  }
+
+
+  .indice a:first-child,
+  .indice span,
+  .indice a:last-child {
+    text-align: center;
+  }
+
+
+  .proyectos {
+    grid-template-columns: 1fr;
+  }
+
+
+  .texto-presentacion h2,
+  .portfolio h2,
+  .wiki h2 {
+    font-size: 35px;
+  }
+
+
+  footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
 }
