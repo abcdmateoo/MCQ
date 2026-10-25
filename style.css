@@ -449,6 +449,48 @@ body .wiki p {
   line-height: 1.7 !important;
 }
 
+/* CENTRAR TODOS LOS TÍTULOS Y TEXTOS */
+
+body {
+  text-align: center;
+}
+
+h1,
+h2,
+p,
+.nombre,
+.descripcion-portafolio,
+.texto-presentacion,
+.wiki,
+.indice,
+.proyecto,
+footer {
+  text-align: center;
+}
+
+/* Mantener las imágenes centradas */
+.fotos-presentacion,
+.proyectos,
+.grupo-fotos {
+  justify-items: center;
+}
+
+/* Centrar el contenido de la presentación */
+.texto-presentacion {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Centrar los enlaces y la navegación */
+.indice {
+  justify-content: center;
+}
+
+.wiki > a {
+  display: inline-block;
+}
+
+
 body .nombre {
   font-size: 24px !important;
 }
