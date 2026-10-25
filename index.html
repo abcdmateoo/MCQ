@@ -1,110 +1,107 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio Digital 2026 de Imagen Escrita. Mateo Correa.">
   <title>Portafolio Digital 2026 IE - Mateo Correa</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- ENCABEZADO -->
-  <header class="encabezado">
+  <header class="encabezado" id="inicio">
+    <span class="estrella estrella-1">✦</span>
+    <span class="estrella estrella-2">✧</span>
 
-    <h1>Portafolio Digital 2026 IE</h1>
+    <h1 class="titulo-portafolio">Portafolio Digital 2026 IE</h1>
+    <p class="nombre">Mateo Correa</p>
 
-    <h3>Mateo Correa</h3>
+    <div class="descripcion-portafolio">
+      <p>
+        Durante este semestre, se trabajó con p5.js, una herramienta que nos permitió conceptualizar y ejecutar las ideas que surgían a partir de los contenidos vistos en clases. El primer encargo consistió en realizar la portada de un álbum de nuestra elección. A partir de este ejercicio, clase a clase se fueron incorporando nuevas herramientas y conceptos, como patrones complejos, loops y pop, entre otros.
+      </p>
 
-    <p class="descripcion-portafolio">
-      Durante este semestre, se trabajó con p5.js, una herramienta que nos permitió conceptualizar y ejecutar las ideas que surgían a partir de los contenidos vistos en clases. El primer encargo consistió en realizar la portada de un álbum de nuestra elección. A partir de este ejercicio, clase a clase se fueron incorporando nuevas herramientas y conceptos, como patrones complejos, loops y pop, entre otros.
-      <br><br>
-      Finalmente, se llegó al proyecto final, correspondiente al sexto encargo, en el que se trabajó en dúos para desarrollar una propuesta a partir de algo que hubiésemos observado, con el objetivo de abstraerlo y representarlo mediante p5.js. A través de los proyectos se puede observar un avance en el uso de la gama cromática, la construcción de patrones y la velocidad de movimiento de los elementos, entre otros aspectos que fueron explorándose y desarrollándose durante el semestre.
-    </p>
-
+      <p>
+        Finalmente, se llegó al proyecto final, correspondiente al sexto encargo, en el que se trabajó en dúos para desarrollar una propuesta a partir de algo que hubiésemos observado, con el objetivo de abstraerlo y representarlo mediante p5.js. A través de los proyectos se puede observar un avance en el uso de la gama cromática, la construcción de patrones y la velocidad de movimiento de los elementos, entre otros aspectos que fueron explorándose y desarrollándose durante el semestre.
+      </p>
+    </div>
   </header>
 
 
-  <!-- CARRUSEL DE FOTOS -->
-  <section class="carrusel">
+  <!-- CARRUSEL DE FOTOGRAFÍAS -->
+  <section class="carrusel" aria-label="Carrusel de fotografías">
 
-    <button class="flecha flecha-izquierda" onclick="anteriorFoto()">
-      &lt;
-    </button>
+    <button
+      class="flecha flecha-izquierda"
+      id="anterior"
+      type="button"
+      aria-label="Mostrar fotografías anteriores"
+    >&lt;</button>
 
     <div class="carrusel-contenedor">
 
-      <!-- GRUPO 1 -->
       <div class="grupo-fotos grupo-1">
-
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114820.png"
-          alt="Imagen del portafolio 1"
+          alt="Fotografía de presentación 1"
         >
-
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114827.png"
-          alt="Imagen del portafolio 2"
+          alt="Fotografía de presentación 2"
         >
-
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114848.png"
-          alt="Imagen del portafolio 3"
+          alt="Fotografía de presentación 3"
         >
-
       </div>
 
-
-      <!-- GRUPO 2 -->
       <div class="grupo-fotos grupo-2">
-
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114902.png"
-          alt="Imagen del portafolio 4"
+          alt="Fotografía de presentación 4"
         >
-
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114931.png"
-          alt="Imagen del portafolio 5"
+          alt="Fotografía de presentación 5"
         >
-
         <img
           src="Captura%20de%20pantalla%202026-10-25%20115005.png"
-          alt="Imagen del portafolio 6"
+          alt="Fotografía de presentación 6"
         >
-
       </div>
 
     </div>
 
-    <button class="flecha flecha-derecha" onclick="siguienteFoto()">
-      &gt;
-    </button>
+    <button
+      class="flecha flecha-derecha"
+      id="siguiente"
+      type="button"
+      aria-label="Mostrar fotografías siguientes"
+    >&gt;</button>
 
   </section>
 
 
-  <!-- ÍNDICE -->
-  <nav class="indice">
-
+  <!-- ÍNDICE DE NAVEGACIÓN -->
+  <nav class="indice" aria-label="Navegación principal">
     <a href="#inicio">01. Inicio</a>
-
-    <span>Bitácora Digital</span>
-
-    <a href="https://wiki.ead.pucv.cl/Sitio_Web_IE_2026_-_Mateo_Correa" target="_blank">
-      Wiki ↗
-    </a>
-
+    <a href="#portfolio">Bitácora Digital</a>
+    <a
+      href="https://wiki.ead.pucv.cl/Sitio_Web_IE_2026_-_Mateo_Correa"
+      target="_blank"
+      rel="noopener noreferrer"
+    >Wiki ↗</a>
   </nav>
 
 
-  <!-- PRESENTACIÓN -->
-  <section id="inicio" class="presentacion">
+  <!-- PRESENTACIÓN DEL CURSO -->
+  <section class="presentacion" id="presentacion">
 
     <div class="texto-presentacion">
-
-      <h2>Imagen Escrita</h2>
+      <h2 class="titulo-seccion">Imagen Escrita</h2>
 
       <p>
         Este portafolio reúne los ejercicios y proyectos realizados durante el semestre, dando cuenta del proceso de aprendizaje, la incorporación de nuevas herramientas y la evolución de las ideas desde su conceptualización hasta su desarrollo digital.
@@ -117,125 +114,124 @@
       <p>
         Mediante JavaScript (p5.js), HTML y CSS, las ideas se conceptualizan y desarrollan a través de la experimentación con herramientas digitales.
       </p>
-
     </div>
 
-    <div class="imagenes-presentacion">
-
+    <div class="fotos-presentacion">
       <img
         src="Captura%20de%20pantalla%202026-10-25%20114931.png"
-        alt="Proceso de trabajo"
+        alt="Registro del proceso de trabajo"
+        loading="lazy"
       >
-
       <img
         src="Captura%20de%20pantalla%202026-10-25%20115005.png"
-        alt="Proceso digital"
+        alt="Registro del proceso digital"
+        loading="lazy"
       >
-
     </div>
 
   </section>
 
 
   <!-- PORTAFOLIO DIGITAL -->
-  <section class="portfolio">
+  <section class="portfolio" id="portfolio">
 
-    <h2>Portfolio Digital</h2>
+    <span class="estrella estrella-3">✧</span>
+    <h2 class="titulo-seccion">Portfolio Digital</h2>
 
     <div class="proyectos">
 
-      <!-- PROYECTO 1 -->
       <a
+        class="proyecto"
         href="https://editor.p5js.org/mateo.Correa/full/kavDiiyfj"
         target="_blank"
-        class="proyecto"
+        rel="noopener noreferrer"
       >
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114827.png"
-          alt="Proyecto 1"
+          alt="Imagen del proyecto digital 1"
+          loading="lazy"
         >
         <p>01. Proyecto</p>
       </a>
 
-
-      <!-- PROYECTO 2 -->
       <a
+        class="proyecto"
         href="https://editor.p5js.org/mateo.Correa/full/_LtR81Hpd"
         target="_blank"
-        class="proyecto"
+        rel="noopener noreferrer"
       >
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114848.png"
-          alt="Proyecto 2"
+          alt="Imagen del proyecto digital 2"
+          loading="lazy"
         >
         <p>02. Proyecto</p>
       </a>
 
-
-      <!-- PROYECTO 3 -->
       <a
+        class="proyecto"
         href="https://editor.p5js.org/mateo.Correa/full/JJO_UZN7S"
         target="_blank"
-        class="proyecto"
+        rel="noopener noreferrer"
       >
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114902.png"
-          alt="Proyecto 3"
+          alt="Imagen del proyecto digital 3"
+          loading="lazy"
         >
         <p>03. Proyecto</p>
       </a>
 
-
-      <!-- PROYECTO 4 -->
       <a
+        class="proyecto"
         href="https://editor.p5js.org/mateo.Correa/full/thTiG7K8L"
         target="_blank"
-        class="proyecto"
+        rel="noopener noreferrer"
       >
         <img
           src="Captura%20de%20pantalla%202026-10-25%20114931.png"
-          alt="Proyecto 4"
+          alt="Imagen del proyecto digital 4"
+          loading="lazy"
         >
         <p>04. Proyecto</p>
       </a>
 
-
-      <!-- PROYECTO 5 -->
       <a
+        class="proyecto"
         href="https://editor.p5js.org/mateo.Correa/full/quTwSFggt"
         target="_blank"
-        class="proyecto"
+        rel="noopener noreferrer"
       >
         <img
           src="Captura%20de%20pantalla%202026-10-25%20115005.png"
-          alt="Proyecto 5"
+          alt="Imagen del proyecto digital 5"
+          loading="lazy"
         >
         <p>05. Proyecto</p>
       </a>
 
-
-      <!-- PROYECTO 6 -->
       <a
+        class="proyecto"
         href="https://editor.p5js.org/mateo.Correa/full/5ZhhPruCL"
         target="_blank"
-        class="proyecto"
+        rel="noopener noreferrer"
       >
         <img
           src="Captura%20de%20pantalla%202026-10-25%20115029.png"
-          alt="Proyecto 6"
+          alt="Imagen del proyecto digital 6"
+          loading="lazy"
         >
         <p>06. Proyecto</p>
       </a>
 
     </div>
-
   </section>
 
 
-  <!-- WIKI -->
-  <section class="wiki">
+  <!-- WIKI CASIOPEA -->
+  <section class="wiki" id="wiki">
 
-    <h2>Wiki Casiopea</h2>
+    <h2 class="titulo-seccion">Wiki Casiopea</h2>
 
     <p>
       Para más información sobre la creación y proceso creativo de la página web, ingresar a este enlace:
@@ -244,76 +240,44 @@
     <a
       href="https://wiki.ead.pucv.cl/Sitio_Web_IE_2026_-_Mateo_Correa"
       target="_blank"
-    >
-      Visitar Wiki Casiopea ↗
-    </a>
+      rel="noopener noreferrer"
+    >Visitar Wiki Casiopea ↗</a>
 
   </section>
 
 
   <!-- PIE DE PÁGINA -->
   <footer>
-
     <p>Mateo Correa</p>
-
     <p>2026 · Imagen Escrita</p>
-
   </footer>
 
 
-  <!-- JAVASCRIPT DEL CARRUSEL -->
+  <!-- FUNCIONAMIENTO DEL CARRUSEL -->
   <script>
+    const grupo1 = document.querySelector(".grupo-1");
+    const grupo2 = document.querySelector(".grupo-2");
+    const botonAnterior = document.getElementById("anterior");
+    const botonSiguiente = document.getElementById("siguiente");
 
     let grupoActual = 1;
 
     function mostrarGrupo(numero) {
+      grupoActual = numero;
 
-      const grupo1 = document.querySelector(".grupo-1");
-      const grupo2 = document.querySelector(".grupo-2");
-
-      if (numero === 1) {
-
-        grupo1.style.display = "flex";
-        grupo2.style.display = "none";
-
-      } else {
-
-        grupo1.style.display = "none";
-        grupo2.style.display = "flex";
-
-      }
-
+      grupo1.classList.toggle("activo", grupoActual === 1);
+      grupo2.classList.toggle("activo", grupoActual === 2);
     }
 
+    botonSiguiente.addEventListener("click", function () {
+      mostrarGrupo(grupoActual === 1 ? 2 : 1);
+    });
 
-    function siguienteFoto() {
-
-      grupoActual++;
-
-      if (grupoActual > 2) {
-        grupoActual = 1;
-      }
-
-      mostrarGrupo(grupoActual);
-
-    }
-
-
-    function anteriorFoto() {
-
-      grupoActual--;
-
-      if (grupoActual < 1) {
-        grupoActual = 2;
-      }
-
-      mostrarGrupo(grupoActual);
-
-    }
-
+    botonAnterior.addEventListener("click", function () {
+      mostrarGrupo(grupoActual === 1 ? 2 : 1);
+    });
 
     mostrarGrupo(1);
-
   </script>
 
 </body>
