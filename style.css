@@ -29,8 +29,6 @@ body {
   color: var(--texto);
   font-size: 16px;
   line-height: 1.6;
-
-  /* Fondo conservado y ajustado al ancho */
   background-color: var(--fondo);
   background-image: url("./Fondo%20trabajo%20final%20Imagen%20Escrita.png");
   background-size: 100% auto;
@@ -62,8 +60,8 @@ button {
 
 .encabezado {
   position: relative;
-  min-height: 80vh;
-  padding: 8rem 10% 5rem;
+  min-height: 75vh;
+  padding: 7rem 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,26 +70,25 @@ button {
 .titulo-portafolio {
   max-width: 1000px;
   margin: 0 0 1rem;
-  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
   line-height: 1.05;
   font-weight: normal;
 }
 
 .nombre {
   margin: 0 0 2rem;
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-size: 1.4rem;
 }
 
 .descripcion-portafolio {
   max-width: 780px;
-  font-size: 1rem;
 }
 
 .descripcion-portafolio p {
   margin: 0 0 1.2rem;
 }
 
-/* ESTRELLAS DECORATIVAS */
+/* ESTRELLAS */
 
 .estrella {
   position: absolute;
@@ -103,13 +100,13 @@ button {
 .estrella-1 {
   top: 12%;
   right: 15%;
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: 4rem;
 }
 
 .estrella-2 {
   top: 35%;
   right: 8%;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: 2.5rem;
 }
 
 .estrella-3 {
@@ -123,7 +120,7 @@ button {
 .carrusel {
   position: relative;
   width: 100%;
-  padding: 2rem 6%;
+  padding: 2rem 5%;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -149,18 +146,18 @@ button {
 
 .grupo-fotos img {
   width: 100%;
-  height: 280px;
+  height: 250px;
   object-fit: contain;
 }
 
 .flecha {
-  flex: 0 0 auto;
+  flex-shrink: 0;
   width: 42px;
   height: 42px;
   border: 1px solid var(--linea);
   border-radius: 50%;
-  color: var(--texto);
   background: var(--fondo);
+  color: var(--texto);
   cursor: pointer;
 }
 
@@ -169,7 +166,7 @@ button {
   color: white;
 }
 
-/* ÍNDICE DE NAVEGACIÓN */
+/* NAVEGACIÓN */
 
 .indice {
   display: flex;
@@ -184,18 +181,13 @@ button {
 
 .indice a {
   color: var(--texto);
-  font-size: 0.95rem;
 }
 
-.indice a:hover {
-  color: var(--acento);
-}
-
-/* TÍTULOS DE SECCIÓN */
+/* TÍTULOS */
 
 .titulo-seccion {
   margin: 0 0 2rem;
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
   line-height: 1.1;
   font-weight: normal;
 }
@@ -205,9 +197,9 @@ button {
 .presentacion {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 4rem;
+  gap: 3rem;
   align-items: center;
-  padding: 7rem 10%;
+  padding: 6rem 10%;
 }
 
 .texto-presentacion {
@@ -227,21 +219,21 @@ button {
 
 .fotos-presentacion img {
   width: 100%;
-  max-height: 380px;
+  max-height: 360px;
   object-fit: contain;
 }
 
-/* PORTAFOLIO Y PROYECTOS */
+/* PORTAFOLIO */
 
 .portfolio {
   position: relative;
-  padding: 7rem 10%;
+  padding: 6rem 10%;
 }
 
 .proyectos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3rem 1.5rem;
+  gap: 2.5rem 1.5rem;
 }
 
 .proyecto {
@@ -253,7 +245,7 @@ button {
 
 .proyecto img {
   width: 100%;
-  height: 240px;
+  height: 230px;
   object-fit: contain;
   margin-bottom: 0.8rem;
 }
@@ -263,14 +255,10 @@ button {
   font-size: 1.1rem;
 }
 
-.proyecto:hover img {
-  opacity: 0.8;
-}
-
-/* WIKI CASIOPEA */
+/* WIKI */
 
 .wiki {
-  padding: 6rem 10%;
+  padding: 5rem 10%;
   border-top: 1px solid var(--linea);
 }
 
@@ -305,17 +293,17 @@ footer p {
 @media (max-width: 900px) {
   .encabezado {
     min-height: auto;
-    padding: 6rem 7% 4rem;
+    padding: 5rem 7%;
   }
 
   .presentacion {
     gap: 2rem;
-    padding: 5rem 7%;
+    padding: 4rem 7%;
   }
 
   .portfolio,
   .wiki {
-    padding: 5rem 7%;
+    padding: 4rem 7%;
   }
 
   .proyectos {
@@ -323,11 +311,7 @@ footer p {
   }
 
   .grupo-fotos img {
-    height: 220px;
-  }
-
-  .fotos-presentacion {
-    grid-template-columns: 1fr;
+    height: 200px;
   }
 
   .fotos-presentacion img {
@@ -335,35 +319,36 @@ footer p {
   }
 }
 
-/* CELULARES */
+/* CELULAR */
 
 @media (max-width: 600px) {
   body {
     font-size: 15px;
-    background-size: auto 100%;
-    background-position: center top;
+    background-size: 100% auto;
   }
 
   .encabezado {
-    padding: 5rem 6% 3rem;
+    padding: 4rem 6%;
   }
 
   .titulo-portafolio {
-    font-size: clamp(2.5rem, 12vw, 4rem);
+    font-size: clamp(2.5rem, 11vw, 4rem);
   }
 
   .estrella-1 {
     top: 3%;
     right: 8%;
+    font-size: 2.5rem;
   }
 
   .estrella-2 {
-    top: 22%;
+    top: 20%;
     right: 5%;
+    font-size: 1.8rem;
   }
 
   .carrusel {
-    padding: 1.5rem 3%;
+    padding: 1.5rem 2%;
     gap: 0.4rem;
   }
 
@@ -382,26 +367,22 @@ footer p {
 
   .indice {
     gap: 1rem;
-    padding: 1.2rem 5%;
+    padding: 1.2rem 4%;
   }
 
   .presentacion {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 4rem 6%;
-  }
-
-  .fotos-presentacion {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .fotos-presentacion img {
-    max-height: 220px;
+    padding: 3.5rem 6%;
   }
 
   .portfolio,
   .wiki {
-    padding: 4rem 6%;
+    padding: 3.5rem 6%;
+  }
+
+  .fotos-presentacion img {
+    max-height: 230px;
   }
 
   .proyectos {
@@ -428,35 +409,4 @@ footer p {
     flex-direction: column;
     gap: 0.5rem;
   }
-}
-
-/* CELULARES MUY PEQUEÑOS */
-
-@media (max-width: 380px) {
-  .grupo-fotos {
-    grid-template-columns: 1fr;
-  }
-
-  .grupo-fotos img {
-    height: 200px;
-  }
-
-  .proyectos {
-    grid-template-columns: 1fr;
-  }
-
-  .proyecto img {
-    height: 220px;
-  }
-}
-/* PRUEBA TEMPORAL */
-.titulo-portafolio {
-  color: red !important;
-  font-size: 60px !important;
-}
-
-.proyectos {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 20px !important;
 }
