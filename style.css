@@ -430,3 +430,25 @@ footer p {
     gap: 0.5rem;
   }
 }
+/* AJUSTE FINAL DE TÍTULOS Y TEXTOS */
+
+body .encabezado h1.titulo-portafolio {
+  color: #6899A3 !important;
+  font-size: 76px !important;
+}
+
+body h2.titulo-seccion {
+  color: #6899A3 !important;
+  font-size: 54px !important;
+}
+
+body .descripcion-portafolio p,
+body .texto-presentacion p,
+body .wiki p {
+  font-size: 19px !important;
+  line-height: 1.7 !important;
+}
+
+body .nombre {
+  font-size: 24px !important;
+}
