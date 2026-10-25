@@ -449,3 +449,14 @@ footer p {
     height: 220px;
   }
 }
+/* PRUEBA TEMPORAL */
+.titulo-portafolio {
+  color: red !important;
+  font-size: 60px !important;
+}
+
+.proyectos {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+}
