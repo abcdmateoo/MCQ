@@ -1,143 +1,429 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-/* --- Estilos Generales --- */
+/* =====================================
+   1. TIPOGRAFÍA Y COLORES
+===================================== */
+
+@font-face {
+  font-family: "Aresink Font";
+  src: url("fuentes/AresinkFont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-fondo: #E5E2DA;
+  --color-acento: #6899A3;
+  --color-texto: #20201E;
+  --color-secundario: #77766F;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: sans-serif;
-    margin: 70px;
-    margin-top:0;
-    padding: 2em;
-    background-color: #f4f4f4;
+  position: relative;
+  margin: 0;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-
-h1, h2 {
-    font-family: 'Space Mono';
-    color: #333;
+a {
+  color: inherit;
 }
 
-h3{
-    font-family: 'Open Sans';
-    font-size: 1em;
+/* =====================================
+   2. ESTRELLITAS DECORATIVAS
+===================================== */
+
+.estrellas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
 }
 
-/* --- Contenedor Principal --- */
-#container {
-    display: grid;
-    /* Define 2 columnas: la primera ocupa 1 fracción, la segunda 2 fracciones */
-    grid-template-columns: 1fr 2fr;
-    gap: 5em; /* Espacio entre las columnas */
-    align-items: start; /* Alinea los items al inicio */
+.estrella {
+  position: absolute;
+  display: block;
+  color: var(--color-acento);
+  line-height: 1;
+  opacity: 0.7;
 }
 
-/* --- Columna Izquierda: Intro --- */
-.intro {
-    /* Por defecto, se ubica en la primera columna del grid */
-    display: flex;
-    flex-direction: column; /* Organiza los elementos internos en una columna */
-    justify-content: center; /* Centra el contenido verticalmente */
+.e1  { top: 55px; left: 7%; font-size: 25px; }
+.e2  { top: 190px; right: 8%; font-size: 15px; }
+.e3  { top: 430px; left: 3%; font-size: 12px; }
+.e4  { top: 690px; right: 5%; font-size: 27px; }
+.e5  { top: 920px; left: 8%; font-size: 17px; }
+.e6  { top: 1160px; right: 9%; font-size: 13px; }
+.e7  { top: 1450px; left: 4%; font-size: 23px; }
+.e8  { top: 1750px; right: 6%; font-size: 17px; }
+.e9  { top: 2050px; left: 10%; font-size: 12px; }
+.e10 { top: 2350px; right: 8%; font-size: 26px; }
+.e11 { top: 2700px; left: 6%; font-size: 18px; }
+.e12 { top: 3000px; right: 10%; font-size: 14px; }
+
+.contenido {
+  position: relative;
+  z-index: 1;
 }
 
-.intro p {
-    /* El párrafo ya usa el ancho de su contenedor por defecto */
-    font-family: 'Open Sans';
-    text-align: justify;
-    line-height: 1.6;
+/* =====================================
+   3. ENCABEZADO Y TÍTULO
+===================================== */
+
+.encabezado {
+  padding: 95px 0 30px;
+  text-align: center;
 }
 
-.intro a {
-    /* El ancla del botón se centrará gracias al 'align-self' */
-    align-self: center; /* Centra este elemento específico en el eje transversal */
-    margin-top: 1em;
+.titulo-portafolio {
+  width: 100%;
+  margin: 0;
+  padding: 0 1%;
+  color: var(--color-acento);
+  font-family: "Aresink Font", sans-serif;
+  font-size: 7vw;
+  font-weight: normal;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 
-.intro button {
-    font-family: 'Space Mono';
-    font-size: 1em;
-    padding: 15px 45px;
-    margin-top: 30px;
-    border: none;
-    background-color: #a588f4;
-    color: #000;
- 
-    cursor: pointer;
-    border-radius: 50px;
-    
+.nombre {
+  margin: 18px 0 55px;
+  color: var(--color-acento);
+  font-family: "Aresink Font", sans-serif;
+  font-size: 23px;
+  font-weight: normal;
 }
 
-.intro button:hover {
-    background: #000; ;
-    color: white;
+/* =====================================
+   4. CARRUSEL
+===================================== */
 
+.carrusel {
+  position: relative;
+  width: 92%;
+  margin: 0 auto 75px;
 }
 
+.carrusel-pagina {
+  display: none;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
 
-/* Columna Derecha: Proyectos */
+.carrusel-pagina.activa {
+  display: grid;
+}
+
+.carrusel-pagina img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.controles-carrusel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  margin-top: 18px;
+  color: var(--color-acento);
+  font-family: "Aresink Font", sans-serif;
+}
+
+.controles-carrusel button {
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  color: var(--color-acento);
+  font: inherit;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.controles-carrusel button:hover {
+  opacity: 0.55;
+}
+
+#indicador {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/* =====================================
+   5. ÍNDICE HORIZONTAL
+===================================== */
+
+.indice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 0 4% 85px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-acento);
+}
+
+.indice a {
+  color: var(--color-acento);
+  font-family: "Aresink Font", sans-serif;
+  font-size: 22px;
+  font-weight: normal;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.indice a:hover {
+  opacity: 0.6;
+}
+
+/* =====================================
+   6. PRESENTACIÓN
+===================================== */
+
+.presentacion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  align-items: center;
+  gap: 55px;
+  margin: 0 4% 145px;
+  scroll-margin-top: 30px;
+}
+
+.texto-presentacion {
+  max-width: 650px;
+}
+
+.texto-presentacion p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.fotos-presentacion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.fotos-presentacion img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* =====================================
+   7. PORTFOLIO DIGITAL
+===================================== */
+
+.portfolio {
+  margin: 0 4% 100px;
+  scroll-margin-top: 30px;
+}
+
+.titulo-seccion {
+  margin: 0 0 12px;
+  color: var(--color-acento);
+  font-family: "Aresink Font", sans-serif;
+  font-size: 42px;
+  font-weight: normal;
+}
+
+.subtitulo-seccion {
+  margin: 0 0 30px;
+  color: var(--color-secundario);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+
 .proyectos {
-    display: flex;
-    flex-direction: column;
-    /* Por defecto, se ubica en la segunda columna del grid */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 38px;
 }
 
-/* --- Galería de Proyectos --- */
-.galeria {
-    display: grid;
-    /* Define 3 columnas de igual tamaño */
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5em; /* Espacio entre las tarjetas */
+.proyecto {
+  display: block;
+  min-width: 0;
+  color: var(--color-acento);
+  text-decoration: none;
 }
 
-/* --- Tarjetas Individuales --- */
-.tarjeta {
-    background-color: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+.proyecto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: opacity 0.25s ease;
 }
 
-.tarjeta a {
-    /* El ancla ocupa todo el espacio de su columna en la galería */
-    display: block; /* Permite que el ancla ocupe todo el espacio */
-    width: 100%;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s ease-in-out;
+.proyecto:hover img {
+  opacity: 0.65;
 }
 
-.tarjeta a:hover {
-    filter: brightness(70%); /* Aplica un filtro de brillo al 70% (más oscuro) */
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+.nombre-proyecto {
+  display: block;
+  margin-top: 10px;
+  font-family: "Aresink Font", sans-serif;
+  font-size: 17px;
 }
 
-.tarjeta img {
-    /* La imagen se ajusta al ancho del ancla */
-    width: 100%;
-    display: block; /* Elimina espacios en blanco debajo de la imagen */
+/* =====================================
+   8. WIKI CASIOPEA
+===================================== */
+
+.wiki-casiopea {
+  margin: 0 4% 60px;
+  padding: 35px 0 45px;
+  border-top: 1px solid var(--color-acento);
+  scroll-margin-top: 30px;
 }
 
-.tarjeta h3 {
-    text-align: center;
-    padding: 0.5em 0;
-    margin: 0;
+.wiki-casiopea h2 {
+  margin: 0 0 18px;
+  color: var(--color-acento);
+  font-family: "Aresink Font", sans-serif;
+  font-size: 42px;
+  font-weight: normal;
 }
 
+.wiki-casiopea p {
+  max-width: 600px;
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.8;
+}
 
-/* --- Media Query para pantallas pequeñas --- */
-@media (max-width: 900px) {
-    
-    /* Ajusta los márgenes del body para aprovechar el espacio */
-    body {
-        margin: 20px;
-        padding: 1em;
-    }
+.wiki-casiopea a {
+  color: var(--color-acento);
+  line-height: 1.8;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
 
-    /* Cambia el contenedor principal a una sola columna */
-    #container {
-        grid-template-columns: 1fr;
-    }
+.wiki-casiopea a:hover {
+  opacity: 0.65;
+}
 
-    /* Cambia la galería de proyectos a una sola columna */
-    .galeria {
-        grid-template-columns: 1fr;
-    }
+/* =====================================
+   9. PIE DE PÁGINA
+===================================== */
+
+.pie-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 4%;
+  padding: 20px 0 30px;
+  border-top: 1px solid var(--color-acento);
+  color: var(--color-acento);
+  font-size: 12px;
+}
+
+/* =====================================
+   10. ADAPTACIÓN A MÓVILES
+===================================== */
+
+@media (max-width: 700px) {
+  .encabezado {
+    padding-top: 65px;
+  }
+
+  .titulo-portafolio {
+    font-size: 6.1vw;
+    letter-spacing: -0.04em;
+  }
+
+  .nombre {
+    margin-bottom: 38px;
+    font-size: 18px;
+  }
+
+  .carrusel {
+    margin-bottom: 55px;
+  }
+
+  .carrusel-pagina {
+    gap: 8px;
+  }
+
+  .indice {
+    margin-bottom: 65px;
+    gap: 10px;
+  }
+
+  .indice a {
+    font-size: clamp(11px, 2.6vw, 16px);
+  }
+
+  .presentacion {
+    grid-template-columns: minmax(0, 1fr) 100px;
+    gap: 20px;
+    margin-bottom: 100px;
+  }
+
+  .texto-presentacion p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .fotos-presentacion {
+    gap: 10px;
+  }
+
+  .titulo-seccion,
+  .wiki-casiopea h2 {
+    font-size: 32px;
+  }
+
+  .subtitulo-seccion {
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  .proyectos {
+    column-gap: 12px;
+    row-gap: 26px;
+  }
+
+  .nombre-proyecto {
+    font-size: 13px;
+  }
+
+  .wiki-casiopea p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .presentacion {
+    grid-template-columns: minmax(0, 1fr) 82px;
+    gap: 14px;
+  }
+
+  .indice a {
+    font-size: 10px;
+  }
+
+  .nombre-proyecto {
+    font-size: 11px;
+  }
 }
