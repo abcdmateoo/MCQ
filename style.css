@@ -8,10 +8,10 @@
 
 :root {
   --fondo: #E5E2DA;
-  --texto: #20201E;
+  --texto: #173B45;
   --acento: #3B7E82;
-  --linea: #20201E;
-  --titulos: #6899A3;
+  --linea: #173B45;
+  --titulos: #173B45;
 }
 
 * {
@@ -28,8 +28,9 @@ body {
   padding: 0;
   font-family: "Aresink", serif;
   color: var(--texto);
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.7;
+  text-align: center !important;
   background-color: var(--fondo);
   background-image: url("./Fondo%20trabajo%20final%20Imagen%20Escrita.png");
   background-size: 100% auto;
@@ -57,6 +58,27 @@ button {
   font: inherit;
 }
 
+/* CENTRAR TODOS LOS TEXTOS */
+
+body,
+body h1,
+body h2,
+body h3,
+body p,
+body span,
+body a,
+body .nombre,
+body .titulo-portafolio,
+body .descripcion-portafolio,
+body .texto-presentacion,
+body .titulo-seccion,
+body .wiki,
+body .indice,
+body .proyecto,
+body footer {
+  text-align: center !important;
+}
+
 /* ENCABEZADO */
 
 .encabezado {
@@ -66,29 +88,37 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center !important;
 }
 
 .titulo-portafolio {
+  width: 100%;
   max-width: 1000px;
-  margin: 0 0 1rem;
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
-  line-height: 1.05;
+  margin: 0 auto 1rem;
+  font-size: 76px !important;
+  line-height: 1.1;
   font-weight: normal;
-  color: var(--titulos);
+  color: #173B45 !important;
 }
 
 .nombre {
-  margin: 0 0 2rem;
-  font-size: 1.5rem;
+  width: 100%;
+  margin: 0 auto 2rem;
+  font-size: 24px !important;
 }
 
 .descripcion-portafolio {
+  width: 100%;
   max-width: 780px;
-  font-size: 1.1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 19px;
 }
 
 .descripcion-portafolio p {
   margin: 0 0 1.2rem;
+  font-size: 19px !important;
+  line-height: 1.7;
 }
 
 /* ESTRELLAS */
@@ -141,6 +171,7 @@ button {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
   align-items: center;
+  justify-items: center;
 }
 
 .grupo-fotos.activo {
@@ -173,7 +204,7 @@ button {
 
 .indice {
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
@@ -187,14 +218,15 @@ button {
   font-size: 1.1rem;
 }
 
-/* TÍTULOS */
+/* TÍTULOS DE SECCIÓN */
 
 .titulo-seccion {
+  width: 100%;
   margin: 0 0 2rem;
-  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-size: 54px !important;
   line-height: 1.1;
   font-weight: normal;
-  color: var(--titulos);
+  color: #173B45 !important;
 }
 
 /* PRESENTACIÓN */
@@ -208,12 +240,15 @@ button {
 }
 
 .texto-presentacion {
+  width: 100%;
   max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .texto-presentacion p {
   margin: 0 0 1.2rem;
-  font-size: 1.1rem;
+  font-size: 19px !important;
   line-height: 1.7;
 }
 
@@ -222,6 +257,7 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   align-items: center;
+  justify-items: center;
 }
 
 .fotos-presentacion img {
@@ -241,12 +277,15 @@ button {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2.5rem 1.5rem;
+  justify-items: center;
 }
 
 .proyecto {
   display: flex;
   flex-direction: column;
+  align-items: center !important;
   min-width: 0;
+  width: 100%;
   color: var(--texto);
 }
 
@@ -259,7 +298,8 @@ button {
 
 .proyecto p {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 19px;
+  color: #173B45;
 }
 
 /* WIKI */
@@ -270,28 +310,33 @@ button {
 }
 
 .wiki p {
+  width: 100%;
   max-width: 650px;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
+  margin: 0 auto 1.5rem;
+  font-size: 19px !important;
   line-height: 1.7;
+  color: #173B45;
 }
 
 .wiki > a {
   display: inline-block;
   padding-bottom: 0.3rem;
   border-bottom: 1px solid var(--acento);
-  font-size: 1.1rem;
+  font-size: 19px;
 }
 
 /* PIE DE PÁGINA */
 
 footer {
   display: flex;
-  justify-content: space-between;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 2rem 10%;
   border-top: 1px solid var(--linea);
-  font-size: 1rem;
+  font-size: 18px;
+  color: #173B45;
 }
 
 footer p {
@@ -304,6 +349,10 @@ footer p {
   .encabezado {
     min-height: auto;
     padding: 5rem 7%;
+  }
+
+  .titulo-portafolio {
+    font-size: 60px !important;
   }
 
   .presentacion {
@@ -342,13 +391,21 @@ footer p {
   }
 
   .titulo-portafolio {
-    font-size: clamp(2.5rem, 11vw, 4rem);
+    font-size: 42px !important;
   }
 
-  .descripcion-portafolio,
+  .nombre {
+    font-size: 22px !important;
+  }
+
+  .descripcion-portafolio p,
   .texto-presentacion p,
   .wiki p {
-    font-size: 1rem;
+    font-size: 17px !important;
+  }
+
+  .titulo-seccion {
+    font-size: 36px !important;
   }
 
   .estrella-1 {
@@ -415,7 +472,7 @@ footer p {
   }
 
   .proyecto p {
-    font-size: 1rem;
+    font-size: 16px;
   }
 
   .estrella-3 {
@@ -429,68 +486,4 @@ footer p {
     flex-direction: column;
     gap: 0.5rem;
   }
-}
-/* AJUSTE FINAL DE TÍTULOS Y TEXTOS */
-
-body .encabezado h1.titulo-portafolio {
-  color: #6899A3 !important;
-  font-size: 76px !important;
-}
-
-body h2.titulo-seccion {
-  color: #6899A3 !important;
-  font-size: 54px !important;
-}
-
-body .descripcion-portafolio p,
-body .texto-presentacion p,
-body .wiki p {
-  font-size: 19px !important;
-  line-height: 1.7 !important;
-}
-
-/* CENTRAR TODOS LOS TÍTULOS Y TEXTOS */
-
-body {
-  text-align: center;
-}
-
-h1,
-h2,
-p,
-.nombre,
-.descripcion-portafolio,
-.texto-presentacion,
-.wiki,
-.indice,
-.proyecto,
-footer {
-  text-align: center;
-}
-
-/* Mantener las imágenes centradas */
-.fotos-presentacion,
-.proyectos,
-.grupo-fotos {
-  justify-items: center;
-}
-
-/* Centrar el contenido de la presentación */
-.texto-presentacion {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Centrar los enlaces y la navegación */
-.indice {
-  justify-content: center;
-}
-
-.wiki > a {
-  display: inline-block;
-}
-
-
-body .nombre {
-  font-size: 24px !important;
 }
