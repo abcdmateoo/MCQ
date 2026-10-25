@@ -11,6 +11,7 @@
   --texto: #20201E;
   --acento: #3B7E82;
   --linea: #20201E;
+  --titulos: #6899A3;
 }
 
 * {
@@ -27,8 +28,8 @@ body {
   padding: 0;
   font-family: "Aresink", serif;
   color: var(--texto);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
   background-color: var(--fondo);
   background-image: url("./Fondo%20trabajo%20final%20Imagen%20Escrita.png");
   background-size: 100% auto;
@@ -73,15 +74,17 @@ button {
   font-size: clamp(2.8rem, 6vw, 5.5rem);
   line-height: 1.05;
   font-weight: normal;
+  color: var(--titulos);
 }
 
 .nombre {
   margin: 0 0 2rem;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .descripcion-portafolio {
   max-width: 780px;
+  font-size: 1.1rem;
 }
 
 .descripcion-portafolio p {
@@ -181,6 +184,7 @@ button {
 
 .indice a {
   color: var(--texto);
+  font-size: 1.1rem;
 }
 
 /* TÍTULOS */
@@ -190,6 +194,7 @@ button {
   font-size: clamp(2.2rem, 4.5vw, 4rem);
   line-height: 1.1;
   font-weight: normal;
+  color: var(--titulos);
 }
 
 /* PRESENTACIÓN */
@@ -208,6 +213,8 @@ button {
 
 .texto-presentacion p {
   margin: 0 0 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .fotos-presentacion {
@@ -265,12 +272,15 @@ button {
 .wiki p {
   max-width: 650px;
   margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .wiki > a {
   display: inline-block;
   padding-bottom: 0.3rem;
   border-bottom: 1px solid var(--acento);
+  font-size: 1.1rem;
 }
 
 /* PIE DE PÁGINA */
@@ -281,7 +291,7 @@ footer {
   gap: 1rem;
   padding: 2rem 10%;
   border-top: 1px solid var(--linea);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 footer p {
@@ -323,7 +333,7 @@ footer p {
 
 @media (max-width: 600px) {
   body {
-    font-size: 15px;
+    font-size: 16px;
     background-size: 100% auto;
   }
 
@@ -333,6 +343,12 @@ footer p {
 
   .titulo-portafolio {
     font-size: clamp(2.5rem, 11vw, 4rem);
+  }
+
+  .descripcion-portafolio,
+  .texto-presentacion p,
+  .wiki p {
+    font-size: 1rem;
   }
 
   .estrella-1 {
@@ -370,6 +386,10 @@ footer p {
     padding: 1.2rem 4%;
   }
 
+  .indice a {
+    font-size: 1rem;
+  }
+
   .presentacion {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -395,7 +415,7 @@ footer p {
   }
 
   .proyecto p {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .estrella-3 {
