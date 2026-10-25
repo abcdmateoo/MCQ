@@ -1,17 +1,25 @@
 
+/* ========================================
+   TIPOGRAFÍA ARESINK
+======================================== */
+
 @font-face {
-  font-family: "Aresink Font";
-  src: url("fuentes/AresinkFont.woff2") format("woff2");
+  font-family: "Aresink";
+  src: url("./demo.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
+/* ========================================
+   COLORES Y CONFIGURACIÓN GENERAL
+======================================== */
+
 :root {
-  --color-fondo: #E5E2DA;
-  --color-acento: #6899A3;
-  --color-texto: #20201E;
-  --color-secundario: #77766F;
+  --fondo: #E5E2DA;
+  --azul: #6899A3;
+  --texto: #20201E;
+  --margen: 6%;
 }
 
 * {
@@ -24,10 +32,11 @@ html {
 
 body {
   margin: 0;
-  background: var(--color-fondo);
-  color: var(--color-texto);
+  background: var(--fondo);
+  color: var(--texto);
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 a {
@@ -35,11 +44,62 @@ a {
   text-decoration: none;
 }
 
-button {
-  font: inherit;
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-/* ESTRELLAS DECORATIVAS */
+/* ========================================
+   TÍTULOS CON ARESINK
+======================================== */
+
+.titulo-portafolio,
+.nombre,
+.indice a,
+.titulo-seccion,
+.proyecto span,
+.wiki-casiopea h2 {
+  font-family: "Aresink", serif;
+  font-weight: normal;
+}
+
+.titulo-portafolio {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.nombre {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  margin: 12px 0 0;
+  color: var(--azul);
+}
+
+.titulo-seccion,
+.wiki-casiopea h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.contenido {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 50px var(--margen) 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   ESTRELLAS DECORATIVAS
+======================================== */
 
 .estrellas {
   position: absolute;
@@ -51,124 +111,44 @@ button {
 
 .estrella {
   position: absolute;
-  color: var(--color-acento);
+  color: var(--azul);
   line-height: 1;
 }
 
-.e1 {
-  top: 100px;
-  left: 3%;
-  font-size: 19px;
-}
+.e1  { top: 3%; left: 8%; font-size: 19px; }
+.e2  { top: 8%; left: 88%; font-size: 26px; }
+.e3  { top: 19%; left: 95%; font-size: 16px; }
+.e4  { top: 31%; left: 3%; font-size: 25px; }
+.e5  { top: 42%; left: 92%; font-size: 17px; }
+.e6  { top: 53%; left: 7%; font-size: 20px; }
+.e7  { top: 64%; left: 96%; font-size: 24px; }
+.e8  { top: 73%; left: 2%; font-size: 16px; }
+.e9  { top: 82%; left: 90%; font-size: 20px; }
+.e10 { top: 89%; left: 6%; font-size: 24px; }
+.e11 { top: 95%; left: 82%; font-size: 16px; }
+.e12 { top: 14%; left: 50%; font-size: 13px; }
 
-.e2 {
-  top: 250px;
-  right: 5%;
-  font-size: 27px;
-}
-
-.e3 {
-  top: 530px;
-  left: 7%;
-  font-size: 13px;
-}
-
-.e4 {
-  top: 760px;
-  right: 3%;
-  font-size: 18px;
-}
-
-.e5 {
-  top: 1050px;
-  left: 4%;
-  font-size: 25px;
-}
-
-.e6 {
-  top: 1300px;
-  right: 7%;
-  font-size: 14px;
-}
-
-.e7 {
-  top: 1580px;
-  left: 8%;
-  font-size: 17px;
-}
-
-.e8 {
-  top: 1840px;
-  right: 4%;
-  font-size: 25px;
-}
-
-.e9 {
-  top: 2150px;
-  left: 3%;
-  font-size: 14px;
-}
-
-.e10 {
-  top: 2450px;
-  right: 8%;
-  font-size: 20px;
-}
-
-.e11 {
-  top: 2750px;
-  left: 6%;
-  font-size: 24px;
-}
-
-.e12 {
-  top: 3000px;
-  right: 3%;
-  font-size: 15px;
-}
-
-/* CONTENIDO PRINCIPAL */
-
-.contenido {
-  position: relative;
-  z-index: 1;
-}
-
-/* ENCABEZADO */
+/* ========================================
+   ENCABEZADO
+======================================== */
 
 .encabezado {
-  padding: 95px 4% 50px;
-  text-align: center;
+  padding: 20px 0 45px;
+  border-bottom: 1px solid var(--texto);
 }
 
-.titulo-portafolio {
-  margin: 0;
-  color: var(--color-acento);
-  font-family: "Aresink Font", serif;
-  font-size: 7vw;
-  font-weight: normal;
-  line-height: 1.1;
-  white-space: nowrap;
-}
-
-.nombre {
-  margin: 18px 0 0;
-  color: var(--color-acento);
-  font-family: "Aresink Font", serif;
-  font-size: 23px;
-}
-
-/* CARRUSEL */
+/* ========================================
+   CARRUSEL DE IMÁGENES
+======================================== */
 
 .carrusel {
-  width: 92%;
-  margin: 0 auto 75px;
+  padding: 35px 0 25px;
 }
 
 .carrusel-pagina {
   display: none;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 16px;
 }
 
 .carrusel-pagina.activa {
@@ -176,10 +156,10 @@ button {
 }
 
 .carrusel-pagina img {
-  display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  background: #D4D0C7;
 }
 
 .controles-carrusel {
@@ -187,107 +167,114 @@ button {
   justify-content: center;
   align-items: center;
   gap: 25px;
-  margin-top: 22px;
-  color: var(--color-secundario);
+  padding-top: 20px;
   font-size: 12px;
 }
 
 .controles-carrusel button {
-  padding: 5px 10px;
-  border: none;
+  border: 1px solid var(--texto);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
   background: transparent;
-  color: var(--color-acento);
-  font-size: 25px;
+  color: var(--texto);
+  font-size: 19px;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
 
 .controles-carrusel button:hover {
-  opacity: 0.6;
+  background: var(--azul);
+  color: var(--fondo);
 }
 
-/* ÍNDICE */
+/* ========================================
+   ÍNDICE HORIZONTAL
+======================================== */
 
 .indice {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  margin: 0 4% 85px;
-  padding: 18px 0;
-  border-top: 1px solid var(--color-acento);
-  border-bottom: 1px solid var(--color-acento);
+  padding: 22px 0;
+  border-top: 1px solid var(--texto);
+  border-bottom: 1px solid var(--texto);
 }
 
 .indice a {
-  color: var(--color-acento);
-  font-family: "Aresink Font", serif;
-  font-size: 22px;
-  transition: opacity 0.2s ease;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  transition: color 0.2s;
 }
 
 .indice a:hover {
-  opacity: 0.6;
+  color: var(--azul);
 }
 
-/* PRESENTACIÓN */
+/* ========================================
+   PRESENTACIÓN
+======================================== */
 
 .presentacion {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 170px;
-  align-items: start;
-  gap: 55px;
-  margin: 0 4% 145px;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 8%;
+  align-items: center;
+  padding: 100px 0;
 }
 
 .texto-presentacion {
   max-width: 650px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.8;
 }
 
 .texto-presentacion p {
   margin: 0 0 22px;
-  font-size: 17px;
-  line-height: 1.8;
+}
+
+.texto-presentacion p:last-child {
+  margin-bottom: 0;
 }
 
 .fotos-presentacion {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
 }
 
 .fotos-presentacion img {
-  display: block;
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
+  background: #D4D0C7;
 }
 
-/* PORTAFOLIO DIGITAL */
+.fotos-presentacion img:nth-child(2) {
+  margin-top: 35px;
+}
+
+/* ========================================
+   PORTFOLIO DIGITAL
+======================================== */
 
 .portfolio {
-  margin: 0 4% 100px;
-}
-
-.titulo-seccion {
-  margin: 0;
-  color: var(--color-acento);
-  font-family: "Aresink Font", serif;
-  font-size: 42px;
-  font-weight: normal;
+  padding: 55px 0 100px;
+  border-top: 1px solid var(--texto);
 }
 
 .subtitulo-seccion {
-  margin: 12px 0 35px;
-  color: var(--color-secundario);
   font-size: 11px;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.15em;
+  margin: 15px 0 40px;
+  color: var(--azul);
 }
 
 .proyectos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 18px;
-  row-gap: 38px;
+  gap: 45px 20px;
 }
 
 .proyecto {
@@ -296,144 +283,134 @@ button {
 }
 
 .proyecto img {
-  display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  transition: opacity 0.25s ease;
+  background: #D4D0C7;
+  transition: opacity 0.25s, transform 0.25s;
 }
 
 .proyecto:hover img {
-  opacity: 0.75;
+  opacity: 0.8;
+  transform: translateY(-4px);
 }
 
 .proyecto span {
   display: block;
-  margin-top: 12px;
-  color: var(--color-acento);
-  font-family: "Aresink Font", serif;
-  font-size: 17px;
+  padding-top: 12px;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
 }
 
-/* WIKI CASIOPEA */
+/* ========================================
+   WIKI CASIOPEA
+======================================== */
 
 .wiki-casiopea {
-  margin: 0 4% 60px;
-  padding: 35px 0 45px;
-  border-top: 1px solid var(--color-acento);
-}
-
-.wiki-casiopea h2 {
-  margin: 0 0 20px;
-  color: var(--color-acento);
-  font-family: "Aresink Font", serif;
-  font-size: 42px;
-  font-weight: normal;
+  border-top: 1px solid var(--texto);
+  padding: 65px 0 75px;
+  max-width: 850px;
 }
 
 .wiki-casiopea p {
+  margin: 25px 0 12px;
   max-width: 650px;
-  margin: 0 0 15px;
-  font-size: 16px;
-  line-height: 1.8;
 }
 
-.wiki-casiopea a {
-  color: var(--color-acento);
-  text-decoration: underline;
+.wiki-casiopea > a {
+  display: inline-block;
+  color: var(--azul);
   overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-/* PIE DE PÁGINA */
+.wiki-casiopea > a:hover {
+  color: var(--texto);
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
 
 .pie-pagina {
+  border-top: 1px solid var(--texto);
+  padding: 20px 0 30px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
-  margin: 0 4%;
-  padding: 22px 0 30px;
-  border-top: 1px solid var(--color-acento);
-  color: var(--color-acento);
-  font-family: "Aresink Font", serif;
-  font-size: 15px;
+  font-size: 12px;
 }
 
-/* ADAPTACIÓN A CELULARES */
+/* ========================================
+   ADAPTACIÓN A PANTALLAS PEQUEÑAS
+======================================== */
 
 @media (max-width: 700px) {
+  :root {
+    --margen: 5%;
+  }
+
+  .contenido {
+    padding-top: 30px;
+  }
+
   .encabezado {
-    padding-top: 65px;
-  }
-
-  .titulo-portafolio {
-    font-size: 6.1vw;
-  }
-
-  .nombre {
-    font-size: 19px;
+    padding-bottom: 30px;
   }
 
   .carrusel-pagina {
-    gap: 8px;
+    gap: 7px;
   }
 
-  .carrusel {
-    margin-bottom: 50px;
+  .carrusel-pagina img {
+    aspect-ratio: 3 / 4;
   }
 
   .indice {
     gap: 10px;
-    margin-bottom: 60px;
   }
 
   .indice a {
-    font-size: 15px;
+    font-size: 0.95rem;
   }
 
   .presentacion {
-    grid-template-columns: minmax(0, 1fr) 100px;
-    gap: 20px;
-    margin-bottom: 85px;
-  }
-
-  .texto-presentacion p {
-    font-size: 14px;
-    line-height: 1.7;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 65px 0;
   }
 
   .fotos-presentacion {
-    gap: 10px;
-  }
-
-  .titulo-seccion,
-  .wiki-casiopea h2 {
-    font-size: 32px;
+    max-width: 430px;
   }
 
   .proyectos {
-    gap: 25px 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 12px;
   }
 
   .proyecto span {
-    font-size: 13px;
+    font-size: 1rem;
   }
 
-  .pie-pagina {
-    font-size: 12px;
+  .wiki-casiopea {
+    padding: 50px 0;
   }
 }
 
 @media (max-width: 400px) {
-  .presentacion {
-    grid-template-columns: minmax(0, 1fr) 82px;
-    gap: 14px;
-  }
-
   .indice a {
-    font-size: 13px;
+    font-size: 0.8rem;
   }
 
-  .controles-carrusel {
-    gap: 15px;
+  .proyectos {
+    grid-template-columns: 1fr;
+  }
+
+  .pie-pagina {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
   }
 }
