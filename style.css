@@ -23,8 +23,11 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
-  background: var(--fondo);
+  background-color: var(--fondo);
+background-image: url("Fondo trabajo final Imagen Escrita");
+background-size: cover;
+background-position: center top;
+background-repeat: no-repeat;
   color: var(--texto);
   font-family: Arial, Helvetica, sans-serif;
 }
