@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: "Aresink";
   src: url("demo.otf") format("opentype");
@@ -5,264 +6,274 @@
   font-style: normal;
 }
 
+:root {
+  --fondo: #E5E2DA;
+  --texto: #20201E;
+  --acento: #3B7E82;
+  --linea: #20201E;
+}
 
 * {
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
   margin: 0;
   padding: 0;
-  background-color: #E5E2DA;
-  color: #20201E;
+  background: var(--fondo);
+  color: var(--texto);
   font-family: Arial, Helvetica, sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
 
-/* =========================
-   ENCABEZADO
-   ========================= */
+/* ENCABEZADO */
 
 .encabezado {
+  position: relative;
+  padding: 75px 8% 35px;
   text-align: center;
-  padding: 70px 8% 30px;
 }
 
-
-.encabezado h1 {
+.titulo-portafolio {
   margin: 0;
-  font-family: "Aresink", serif;
-  font-size: clamp(45px, 7vw, 90px);
-  font-weight: normal;
   color: #3B7E82;
-  letter-spacing: -2px;
-}
-
-
-.encabezado h3 {
-  margin: 15px 0 0;
   font-family: "Aresink", serif;
-  font-size: 25px;
+  font-size: clamp(42px, 7vw, 88px);
   font-weight: normal;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
 }
 
+.nombre {
+  margin: 18px 0 0;
+  font-family: "Aresink", serif;
+  font-size: 24px;
+}
 
 .descripcion-portafolio {
+  width: 100%;
   max-width: 850px;
   margin: 35px auto 0;
-  font-size: 16px;
-  line-height: 1.7;
   text-align: left;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
+.descripcion-portafolio p {
+  margin: 0 0 20px;
+}
 
-/* =========================
-   CARRUSEL
-   ========================= */
+/* ESTRELLAS DECORATIVAS */
+
+.estrella {
+  position: absolute;
+  color: var(--acento);
+  font-size: 25px;
+  pointer-events: none;
+}
+
+.estrella-1 {
+  top: 35px;
+  left: 8%;
+}
+
+.estrella-2 {
+  top: 80px;
+  right: 9%;
+  font-size: 34px;
+}
+
+.estrella-3 {
+  top: 0;
+  right: 0;
+  font-size: 28px;
+}
+
+/* CARRUSEL */
 
 .carrusel {
-  width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 40px 0 70px;
+  gap: 0;
+  width: 100%;
+  margin: 35px 0 70px;
 }
-
 
 .carrusel-contenedor {
   width: 86%;
   overflow: hidden;
 }
 
-
 .grupo-fotos {
+  display: none;
   width: 100%;
-  display: flex;
   gap: 20px;
   justify-content: center;
+  align-items: stretch;
 }
 
+.grupo-fotos.activo {
+  display: flex;
+}
 
 .grupo-fotos img {
-  width: calc(33.333% - 14px);
+  display: block;
+  width: calc((100% - 40px) / 3);
+  min-width: 0;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  display: block;
 }
-
-
-.grupo-2 {
-  display: none;
-}
-
 
 .flecha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 7%;
-  background: none;
+  padding: 0;
   border: none;
-  color: #3B7E82;
+  background: transparent;
+  color: var(--acento);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 45px;
+  font-size: 44px;
   font-weight: normal;
   line-height: 1;
   cursor: pointer;
-  padding: 0;
 }
-
 
 .flecha:hover {
   opacity: 0.55;
 }
 
-
-.flecha-izquierda {
-  text-align: center;
+.flecha:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 4px;
 }
 
-
-.flecha-derecha {
-  text-align: center;
-}
-
-
-/* =========================
-   ÍNDICE
-   ========================= */
+/* ÍNDICE */
 
 .indice {
-  width: 84%;
-  margin: 0 auto 90px;
-  padding: 18px 0;
-  border-top: 1px solid #20201E;
-  border-bottom: 1px solid #20201E;
-
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  width: 84%;
+  margin: 0 auto 90px;
+  padding: 18px 0;
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
 }
 
-
-.indice a,
-.indice span {
+.indice a {
+  color: var(--texto);
   font-family: "Aresink", serif;
   font-size: 18px;
-  color: #20201E;
   text-decoration: none;
 }
-
-
-.indice a:hover {
-  color: #3B7E82;
-}
-
 
 .indice a:first-child {
   text-align: left;
 }
 
-
-.indice span {
+.indice a:nth-child(2) {
   text-align: center;
 }
-
 
 .indice a:last-child {
   text-align: right;
 }
 
-
-/* =========================
-   PRESENTACIÓN
-   ========================= */
-
-.presentacion {
-  width: 84%;
-  margin: 0 auto 120px;
-
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: 70px;
-  align-items: start;
+.indice a:hover {
+  color: var(--acento);
 }
 
+/* TÍTULOS DE SECCIÓN */
 
-.texto-presentacion h2,
-.portfolio h2,
-.wiki h2 {
+.titulo-seccion {
+  margin: 0 0 30px;
   font-family: "Aresink", serif;
   font-size: 42px;
   font-weight: normal;
-  color: #20201E;
-  margin-top: 0;
-  margin-bottom: 30px;
+  line-height: 1.2;
 }
 
+/* PRESENTACIÓN */
 
-.texto-presentacion p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 22px;
-}
-
-
-.imagenes-presentacion {
+.presentacion {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-
-.imagenes-presentacion img {
-  width: 100%;
-  display: block;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-
-/* =========================
-   PORTFOLIO DIGITAL
-   ========================= */
-
-.portfolio {
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: start;
+  gap: 65px;
   width: 84%;
   margin: 0 auto 120px;
 }
 
+.texto-presentacion p,
+.wiki p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.texto-presentacion p {
+  margin: 0 0 22px;
+}
+
+.fotos-presentacion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fotos-presentacion img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* PORTFOLIO DIGITAL */
+
+.portfolio {
+  position: relative;
+  width: 84%;
+  margin: 0 auto 120px;
+}
+
+.portfolio .titulo-seccion {
+  margin-bottom: 35px;
+}
 
 .proyectos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 45px 25px;
 }
 
-
 .proyecto {
-  text-decoration: none;
-  color: #20201E;
   display: block;
+  min-width: 0;
+  color: var(--texto);
+  text-decoration: none;
 }
-
 
 .proyecto img {
-  width: 100%;
   display: block;
+  width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
-
 
 .proyecto:hover img {
   opacity: 0.7;
 }
-
 
 .proyecto p {
   margin: 12px 0 0;
@@ -270,54 +281,43 @@ body {
   font-size: 18px;
 }
 
-
-/* =========================
-   WIKI
-   ========================= */
+/* WIKI CASIOPEA */
 
 .wiki {
   width: 84%;
-  margin: 0 auto 120px;
-  padding-top: 50px;
-  border-top: 1px solid #20201E;
+  margin: 0 auto 110px;
+  padding-top: 45px;
+  border-top: 1px solid var(--linea);
 }
-
 
 .wiki p {
   max-width: 650px;
-  font-size: 16px;
-  line-height: 1.7;
+  margin-bottom: 22px;
 }
 
-
 .wiki a {
-  color: #3B7E82;
+  color: var(--acento);
   font-family: "Aresink", serif;
   font-size: 18px;
   text-decoration: none;
 }
 
-
 .wiki a:hover {
   text-decoration: underline;
 }
 
-
-/* =========================
-   FOOTER
-   ========================= */
+/* PIE DE PÁGINA */
 
 footer {
-  width: 84%;
-  margin: 0 auto;
-  padding: 30px 0 45px;
-  border-top: 1px solid #20201E;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
+  width: 84%;
+  margin: 0 auto;
+  padding: 25px 0 40px;
+  border-top: 1px solid var(--linea);
 }
-
 
 footer p {
   margin: 0;
@@ -325,144 +325,147 @@ footer p {
   font-size: 16px;
 }
 
-
-/* =========================
-   RESPONSIVE
-   ========================= */
+/* TABLET */
 
 @media (max-width: 800px) {
-
   .encabezado {
-    padding: 50px 6% 25px;
+    padding: 55px 6% 25px;
   }
 
-
-  .encabezado h1 {
-    font-size: 50px;
+  .titulo-portafolio {
+    font-size: clamp(40px, 8vw, 60px);
   }
-
 
   .descripcion-portafolio {
     font-size: 15px;
   }
 
-
   .carrusel-contenedor {
     width: 82%;
   }
-
 
   .grupo-fotos {
     gap: 10px;
   }
 
-
   .grupo-fotos img {
-    width: calc(33.333% - 7px);
+    width: calc((100% - 20px) / 3);
   }
-
 
   .flecha {
     width: 9%;
-    font-size: 35px;
+    font-size: 36px;
   }
 
-
-  .indice {
-    width: 88%;
-  }
-
-
-  .presentacion {
-    width: 88%;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-
-  .portfolio {
-    width: 88%;
-  }
-
-
-  .proyectos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-
-  .wiki {
-    width: 88%;
-  }
-
-
+  .indice,
+  .presentacion,
+  .portfolio,
+  .wiki,
   footer {
     width: 88%;
   }
 
-}
-
-
-@media (max-width: 550px) {
-
-  .encabezado h1 {
-    font-size: 40px;
+  .presentacion {
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
+  .fotos-presentacion {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-  .encabezado h3 {
+  .proyectos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* MÓVIL */
+
+@media (max-width: 550px) {
+  .encabezado {
+    padding: 45px 6% 20px;
+  }
+
+  .titulo-portafolio {
+    font-size: 39px;
+    letter-spacing: -0.5px;
+  }
+
+  .nombre {
     font-size: 21px;
   }
 
-
-  .carrusel-contenedor {
-    width: 78%;
+  .estrella-1 {
+    top: 15px;
+    left: 5%;
   }
 
+  .estrella-2 {
+    top: 25px;
+    right: 5%;
+  }
+
+  .carrusel {
+    margin: 25px 0 50px;
+  }
+
+  .carrusel-contenedor {
+    width: 80%;
+  }
 
   .grupo-fotos {
     gap: 6px;
   }
 
-
   .grupo-fotos img {
-    width: calc(33.333% - 4px);
+    width: calc((100% - 12px) / 3);
+    aspect-ratio: 3 / 4;
   }
-
 
   .flecha {
+    width: 10%;
     font-size: 28px;
   }
-
 
   .indice {
     grid-template-columns: 1fr;
     gap: 15px;
-    text-align: center;
+    margin-bottom: 65px;
   }
 
-
+  .indice a,
   .indice a:first-child,
-  .indice span,
+  .indice a:nth-child(2),
   .indice a:last-child {
     text-align: center;
   }
 
-
-  .proyectos {
-    grid-template-columns: 1fr;
-  }
-
-
-  .texto-presentacion h2,
-  .portfolio h2,
-  .wiki h2 {
+  .titulo-seccion {
     font-size: 35px;
   }
 
+  .presentacion,
+  .portfolio {
+    margin-bottom: 80px;
+  }
+
+  .fotos-presentacion {
+    grid-template-columns: 1fr;
+  }
+
+  .proyectos {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .wiki {
+    margin-bottom: 75px;
+  }
 
   footer {
     flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
   }
-
 }
